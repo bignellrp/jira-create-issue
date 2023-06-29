@@ -1,9 +1,13 @@
+import base64
 import json
 import requests
 
 api_url = "https://example.com/rest/api/2/issue"
+username = "<JIRA_USERNAME>"
+password = "<JIRA_PASSWORD>"
 
 headers = {
+    "Authorization": "Basic " + base64.b64encode(f"{username}:{password}".encode("utf-8")).decode("utf-8"),
     "Content-Type": "application/json"
 }
 
