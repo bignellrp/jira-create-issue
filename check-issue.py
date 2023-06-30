@@ -1,9 +1,14 @@
 import requests
 import json
+import getpass
 
 jira_url = "https://example.com/rest/api/2/search"
-jira_username = "<JIRA_USERNAME>"
-jira_password = "<JIRA_PASSWORD>"
+jira_username = input("Jira Username: ")
+jira_password = getpass.getpass("Jira Password: ")
+
+# jira_url = "https://example.com/rest/api/2/search"
+# jira_username = "<JIRA_USERNAME>"
+# jira_password = "<JIRA_PASSWORD>"
 
 # JQL query to search for the existing issue
 jql_query = "project = <PROJECT_KEY> AND summary ~ '<SUMMARY>'"
